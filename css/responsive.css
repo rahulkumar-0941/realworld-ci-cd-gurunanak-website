@@ -1,0 +1,72 @@
+/* navbar and hamburger */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  #navbar {
+    display: none;
+    flex-direction: column;
+    background-color: #010c1d;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  #navbar.active {
+    display: flex;
+  }
+
+  #navbar a {
+    text-align: left;
+    padding: 0.5rem 1rem;
+    display: block;
+    color: white;
+    text-decoration: none;
+  }
+
+  .topbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* Optional: vertically center items */
+    padding: 10px 15px;
+  }
+
+  .topbar-right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 50px;
+    width: auto;
+  }
+
+}
+
+/* On smaller screens */
+@media (max-width: 768px) {
+  .hero {
+    height: 200px;      /* allow container to grow */
+    padding: 2rem 1rem; /* add top and bottom padding */
+  }
+
+  .hero-text {
+    height: 80%;
+    width: 90%;  /* narrower on mobile for fewer lines */
+    padding: 3rem 1rem; /* reduce padding to fit better */
+    font-size: 10px;  /* same font size */
+    line-height: normal;
+    white-space: normal; /* ensure text wraps normally */
+  }
+}
+
+/* Hide phone number on smaller screens */
+@media screen and (max-width: 768px) {
+  .contact-number {
+    display: none;
+  }
+}
+
+
