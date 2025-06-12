@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'shreegurunanaktransportcompany@gmail.com';  // your Gmail
-        $mail->Password   = 'your-app-password';                         // app password here
+        $mail->Password   = 'cvjvsunbtioedyxy';                         // app password here
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 
