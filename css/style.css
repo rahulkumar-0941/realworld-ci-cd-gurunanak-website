@@ -289,7 +289,7 @@ body {
 }
 
 .form-container {
-  background-color: #1a1c2c;
+  background-color: red;
   border-radius: 16px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
   padding: 2.5rem 2rem;
@@ -416,3 +416,4 @@ body {
   object-position: center;
   display: block;
 }
+
