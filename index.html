@@ -27,9 +27,10 @@
 
 <!-- Navigation -->
 <nav id="navbar">
+  <a href="index.html">Home</a>
   <a href="aboutus.html">About Us</a>
   <a href="services.html">Services</a>
-  <a href="postload.html">Post a Load / Find a Truck</a>
+  <a href="#postload">Post a Load / Find a Truck</a>
   <a href="testimonials.html">Testimonials</a>
   <a href="contact.html">Contact</a>
 </nav>
@@ -47,6 +48,21 @@
   </div>
 </header>
 
+<section id="postload">
+  <div class="form-container">
+    <h2>Post a Load / Find a Truck</h2>
+    <form action="send_email.php" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="text" name="role" placeholder="Truck Owner / Goods Owner" required />
+      <input type="text" name="pickup" placeholder="Pickup Location" required />
+      <input type="text" name="drop" placeholder="Drop Location" required />
+      <input type="text" name="type" placeholder="Type of Goods or Truck" required />
+      <textarea name="details" rows="4" placeholder="Additional Details"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer class="footer">
   <div class="footer-container">
@@ -63,22 +79,17 @@
 
         <!-- Social Icons -->
         <div class="footer-social-links">
-          <!-- Facebook -->
           <a href="https://www.facebook.com/share/16G3xxAPwp/" aria-label="Facebook" target="_blank" rel="noopener" class="social-icon">
             <img src="images/facebook.svg" alt="facebook" />
           </a>
-
-          <!-- Twitter -->
           <a href="https://x.com/SGTcompany?t=eGrFipwQwRxFg-qgKMJuiA&s=09" aria-label="Twitter" target="_blank" rel="noopener" class="social-icon">
             <img src="images/twitter.svg" alt="twitter" />
           </a>
-          <!-- LinkedIn -->
           <a href="https://www.linkedin.com/company/shree-gurunanak-transport-company/" aria-label="LinkedIn" target="_blank" rel="noopener" class="social-icon">
             <img src="images/linkedin.svg" alt="linkedin" />
           </a>
-          <!-- WhatsApp -->
           <a href="https://wa.me/qr/C6IXACDT4IVXK1" aria-label="WhatsApp" target="_blank" rel="noopener" class="social-icon">
-            <img src="images/whatsapp.svg" alt="whatsapp">
+            <img src="images/whatsapp.svg" alt="whatsapp" />
           </a>
         </div>
       </div>
@@ -103,7 +114,7 @@
           Near Deo More HP Petrol Pump<br />
           Aurangabad, Bihar, 824101<br />
           Phone: +91 9162070958<br />
-          Email: <a href="shreegurunanaktransportcompany@gmail.com">sgtc111975@gmail.com</a><br />
+          Email: <a href="mailto:sgtc111975@gmail.com">sgtc111975@gmail.com</a><br />
           GSTIN: 10EBZPS8102M1Z1
         </address>
       </div>
@@ -115,7 +126,6 @@
 </footer>
 
 <script src="javascript/script1.js"></script>
-</body>
 </body>
 </html>
 
