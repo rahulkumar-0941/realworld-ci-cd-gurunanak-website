@@ -2,35 +2,40 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'phpmailer/PHPMailer.php';
-require 'phpmailer/SMTP.php';
-require 'phpmailer/Exception.php';
+// SECRET KEY to protect from unauthorized access
+$SECRET_KEY = "myStrongSecret123";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name    = $_POST['name'];
-    $role    = $_POST['role'];
-    $pickup  = $_POST['pickup'];
-    $drop    = $_POST['drop'];
-    $type    = $_POST['type'];
-    $details = $_POST['details'];
+// Check POST method and validate secret
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['secret']) && $_POST['secret'] === $SECRET_KEY) {
+
+    require 'phpmailer/PHPMailer.php';
+    require 'phpmailer/SMTP.php';
+    require 'phpmailer/Exception.php';
+
+    $name    = $_POST['name'] ?? 'N/A';
+    $role    = $_POST['role'] ?? 'N/A';
+    $pickup  = $_POST['pickup'] ?? 'N/A';
+    $drop    = $_POST['drop'] ?? 'N/A';
+    $type    = $_POST['type'] ?? 'N/A';
+    $details = $_POST['details'] ?? 'N/A';
 
     $mail = new PHPMailer(true);
 
     try {
-        // Server settings
+        // SMTP configuration
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'shreegurunanaktransportcompany@gmail.com';  // your Gmail
-        $mail->Password   = 'cvjvsunbtioedyxy';                         // app password here
+        $mail->Username   = 'shreegurunanaktransportcompany@gmail.com';  // Your email
+        $mail->Password   = 'cvjvsunbtioedyxy';                         // Gmail app password
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 
-        // Recipients
+        // Sender & receiver
         $mail->setFrom('shreegurunanaktransportcompany@gmail.com', 'SGTC Website');
         $mail->addAddress('shreegurunanaktransportcompany@gmail.com');
 
-        // Content
+        // Email content
         $mail->isHTML(true);
         $mail->Subject = 'New Load/Truck Submission from Website';
         $mail->Body    = "
@@ -48,5 +53,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (Exception $e) {
         echo "Email could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
+
+} else {
+    // Invalid access
+    http_response_code(403);
+    echo "Access Denied.";
 }
 ?>
