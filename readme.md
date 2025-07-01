@@ -121,5 +121,5 @@ sudo systemctl restart httpd
 
 
 👋 Author
-Project by Rahul Kumar 
+Rahul Kumar 
 AWS DevOps Engineer
