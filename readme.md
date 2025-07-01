@@ -120,4 +120,6 @@ sudo systemctl restart httpd
 ✅ Use systemctl status httpd to check Apache status.
 
 
-👤 Author Rahul Kumar DevOps Engineer 
+👋 Author
+Project by Rahul Kumar 
+AWS DevOps Engineer

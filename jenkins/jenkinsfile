@@ -1,0 +1,53 @@
+/*
+================================================================================
+  Project: realworld-ci-cd-gurunanak-website
+  Purpose: Deploy a static website automatically from GitHub to EC2 via Jenkins
+
+  💡 TECHNOLOGY STACK:
+    - GitHub: Store source code (HTML, CSS, JS)
+    - Terraform: Provision EC2 instance on AWS
+    - Ansible: Install packages on server (git, httpd, Jenkins)
+    - Jenkins: Automate build & deployment (Pipeline + Publish Over SSH)
+    - Publish Over SSH: Copy site files to EC2
+    - Apache (httpd): Serve the website
+    - Certbot + Let’s Encrypt: HTTPS SSL certificate
+    - Hostinger: Custom domain (gurunanaktransport.online)
+
+================================================================================
+  ✅ JENKINS SETUP STEPS DONE:
+
+  1️⃣ Installed Jenkins on the EC2 server using Ansible.
+  2️⃣ Installed 'Publish Over SSH' Jenkins plugin.
+  3️⃣ Configured SSH credentials in Jenkins:
+      - Jenkins → Manage Jenkins → Configure System → Publish Over SSH
+      - Added SSH Server:
+          - Name: ec2-ssh-config
+          - Host: [Your EC2 Public IP]
+          - Username: ec2-user
+          - SSH Key: [Your private key .pem]
+          - Test connection ✔️
+
+  4️⃣ Created a GitHub Webhook to trigger build automatically:
+      - GitHub repo → Settings → Webhooks
+      - Payload URL: http://[Your Jenkins Public IP]/github-webhook/
+
+  5️⃣ Created this Pipeline Job:
+      - Type: Pipeline
+      - Pipeline Script: This Jenkinsfile
+      - Branch: main
+
+  6️⃣ Pipeline Stages:
+      - Checkout: Pull latest code from GitHub
+      - Build: No build needed for static HTML
+      - Deploy: Use Publish Over SSH to copy files to /var/www/html on EC2
+        - Runs `sudo systemctl restart httpd` to reload Apache
+
+================================================================================
+  🔗 RESULT:
+  - Any code push to GitHub triggers Jenkins automatically.
+  - Jenkins copies updated site files to EC2 server.
+  - Website is served securely over HTTPS with Let’s Encrypt SSL.
+  - Domain: https://gurunanaktransport.online
+
+================================================================================
+*/
