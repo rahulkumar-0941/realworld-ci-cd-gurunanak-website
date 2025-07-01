@@ -61,14 +61,22 @@ It shows how to combine **Git, GitHub, Terraform, Ansible, Jenkins, Apache, Let�
 
 ```plaintext
 realworld-ci-cd-gurunanak-website/
- ├── index.html
- ├── css/
- ├── images/
- ├── scripts/
+.
+
+ ├── code/
+ │   ├── index.html
+ │   ├── aboutus.html
+ │   └── contact.html
+ │   ├── postload.html
+ │   └── services.html
+ │   ├── css/
+ │   ├── javascript/
+ │   └── images/
  ├── terraform/      # Terraform configs for EC2
  ├── ansible/        # Ansible playbooks for server setup
  ├── jenkins/        # Jenkins job configs
  ├── README.md
+
 ✅ Step-by-Step Deployment
 bash
 Copy
@@ -111,7 +119,5 @@ sudo systemctl restart httpd
 
 ✅ Use systemctl status httpd to check Apache status.
 
-👋 Author
-Project by Rahul Singh
 
-🔗 Live Website: https://gurunanaktransport.online
+👤 Author Rahul Kumar DevOps Engineer 
