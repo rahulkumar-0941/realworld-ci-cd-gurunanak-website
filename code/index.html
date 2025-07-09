@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init(""); //public key
+    })();
+  </script>
 </head>
 <body>
 
@@ -51,7 +57,7 @@
 <section id="postload">
   <div class="form-container">
     <h2>Post a Load / Find a Truck</h2>
-<form>
+<form id="loadForm">
   <input type="hidden" name="secret" value="myStrongSecret123">
   <input type="text" name="name" required placeholder="Your Name">
   <input type="text" name="role" required placeholder="Role (e.g., Truck Owner)">
@@ -127,6 +133,7 @@
   </div>
 </footer>
 
+<script src = "javascript/emailJS.js"></script>
 <script src="javascript/script1.js"></script>
 </body>
 </html>
