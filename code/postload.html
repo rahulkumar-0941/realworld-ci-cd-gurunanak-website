@@ -6,6 +6,12 @@
   <title>Post a Load / Find a Truck - Gurunanak Transport</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init(""); //public key
+    })();
+  </script>
 </head>
 <body>
 
@@ -47,8 +53,9 @@
 <section id="postload">
   <div class="form-container">
     <h2>Post a Load / Find a Truck</h2>
-    <form>
+    <form id="loadForm">
       <input type="text" name="name" placeholder="Your Name" required />
+      <!-- <input type="text" email="email"placholder="Email (Option)"/> -->
       <input type="text" name="role" placeholder="Truck Owner / Goods Owner" required />
       <input type="text" name="pickup" placeholder="Pickup Location" required />
       <input type="text" name="drop" placeholder="Drop Location" required />
@@ -126,5 +133,6 @@
 </footer>
 
 <script src="javascript/script1.js"></script>
+<script src = "javascript/emailJS.js"></script>
 </body>
 </html>
