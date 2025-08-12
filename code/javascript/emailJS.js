@@ -1,5 +1,5 @@
-const YOUR_SERVICE_ID = "";
-const YOUR_TEMPLATE_ID = "";
+const YOUR_SERVICE_ID = "service_2ovqyob";
+const YOUR_TEMPLATE_ID = "template_ylgvoxh";
 
 document.getElementById('loadForm').addEventListener('submit', function (e) {
     e.preventDefault();
