@@ -70,7 +70,7 @@ realworld-ci-cd-gurunanak-website/
  │   ├── postload.html
  │   └── services.html
  │   ├── css/
- │   ├── javascript/
+ │   ├── javascript/  # EmailJS integration for sending form data to your email
  │   └── images/
  ├── terraform/      # Terraform configs for EC2
  ├── ansible/        # Ansible playbooks for server setup
